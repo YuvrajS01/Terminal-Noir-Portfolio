@@ -19,7 +19,7 @@ export default function About(props: { key?: string }) {
           </h1>
           <div className="space-y-8 text-lg md:text-xl text-slate-400 font-serif leading-relaxed">
             <p>
-              As a Fullstack Engineer based in India with over 4 years of experience, I specialize in building digital infrastructure that balances extreme machine efficiency with intuitive human-centered design.
+              As a Fullstack Engineer based in Gaya, India with over 4 years of experience, I specialize in building digital infrastructure that balances extreme machine efficiency with intuitive human-centered design.
             </p>
             <p>
               My journey involves founding <strong>Rayavriti</strong>, where I push the boundaries of scalable architectures. I believe that code should be as elegant as it is functional, rooted in a philosophy where clarity meets complexity.
@@ -72,7 +72,7 @@ export default function About(props: { key?: string }) {
           </div>
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-primary mb-1">Location_Node</p>
-            <p className="font-mono text-xs tracking-widest text-slate-400">INDIA [20.5937° N, 78.9629° E]</p>
+            <p className="font-mono text-xs tracking-widest text-slate-400">GAYA, INDIA [24.7964° N, 84.9914° E]</p>
           </div>
         </div>
       </div>

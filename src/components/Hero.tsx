@@ -31,7 +31,7 @@ export default function Hero({ setActiveTab }: HeroProps) {
           <span className="text-primary">Scaling Ideas.</span>
         </h1>
         <p className="mt-10 font-mono text-slate-400 text-sm md:text-lg border-l-2 border-primary pl-6 py-2 max-w-2xl leading-relaxed">
-          // Fullstack Engineer based in India <br/>
+          // Fullstack Engineer based in Gaya, India <br/>
           // Specialized in distributed architectures & high-performance UI
         </p>
       </div>

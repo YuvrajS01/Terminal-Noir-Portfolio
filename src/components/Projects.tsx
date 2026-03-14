@@ -41,7 +41,7 @@ const projects = [
 
 export default function Projects(props: { key?: string }) {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -50,12 +50,12 @@ export default function Projects(props: { key?: string }) {
     >
       <div className="mb-16 border-l-4 border-primary pl-6">
         <h1 className="text-slate-100 text-5xl md:text-7xl font-bold font-serif leading-tight uppercase">Selected Works</h1>
-        <p className="text-primary/60 font-mono mt-4 text-sm tracking-widest">ARCHIVE_FILE: 2024_PROD_DEPLOYMENTS</p>
+        <p className="text-primary/60 font-mono mt-4 text-sm tracking-widest">ARCHIVE_FILE: 2026_PROD_DEPLOYMENTS</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, i) => (
-          <motion.div 
+          <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,18 +67,18 @@ export default function Projects(props: { key?: string }) {
                 <span className="text-primary/50 font-mono text-xs tracking-widest">ID: {project.id}</span>
                 <ArrowUpRight className="text-primary group-hover:scale-125 transition-transform" size={20} />
               </div>
-              
+
               <div className="w-full h-48 mb-6 bg-bg-dark/50 border border-primary/10 overflow-hidden relative">
                 <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
-                <img 
-                  src={project.img} 
+                <img
+                  src={project.img}
                   alt={project.title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 group-hover:scale-105"
                 />
               </div>
-              
+
               <h3 className="text-3xl font-serif text-slate-100 mb-4 italic">{project.title}</h3>
-              
+
               <div className="flex flex-wrap gap-2">
                 {project.tags.map(tag => (
                   <span key={tag} className="bg-primary/5 text-primary border border-primary/20 px-2 py-1 text-[10px] font-mono uppercase tracking-widest">
@@ -87,7 +87,7 @@ export default function Projects(props: { key?: string }) {
                 ))}
               </div>
             </div>
-            
+
             <div className="mt-6 pt-4 border-t border-primary/10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
               <p className="text-slate-400 text-sm leading-relaxed font-display">
                 {project.desc}
