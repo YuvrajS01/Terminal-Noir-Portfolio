@@ -14,7 +14,7 @@ const experiences = [
     tags: ['ENTREPRENEURSHIP', 'FULLSTACK', 'SYSTEM DESIGN']
   },
   {
-    year: '2022',
+    year: '2024',
     title: 'Senior Fullstack Engineer',
     company: '@TECH_INNOVATORS',
     icon: <Layers size={16} />,
@@ -25,7 +25,7 @@ const experiences = [
     tags: ['TYPESCRIPT', 'REACT', 'NODE.JS']
   },
   {
-    year: '2020',
+    year: '2023',
     title: 'Software Engineer',
     company: '@STARTUP_HUB',
     icon: <Code2 size={16} />,
@@ -39,7 +39,7 @@ const experiences = [
 
 export default function Experience(props: { key?: string }) {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -61,10 +61,10 @@ export default function Experience(props: { key?: string }) {
       <div className="relative">
         {/* Vertical Line */}
         <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-primary shadow-[0_0_15px_rgba(191,255,0,0.4)]"></div>
-        
+
         <div className="space-y-24">
           {experiences.map((exp, i) => (
-            <motion.div 
+            <motion.div
               key={exp.year}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -75,25 +75,25 @@ export default function Experience(props: { key?: string }) {
               <div className="absolute left-0 top-0 w-10 h-10 bg-bg-dark border-2 border-primary rounded-full flex items-center justify-center z-20 shadow-[0_0_10px_rgba(191,255,0,0.3)] text-primary">
                 {exp.icon}
               </div>
-              
+
               <div className="flex flex-col md:flex-row md:items-start gap-8">
                 <div className="md:w-1/4 pt-2">
                   <h2 className="font-serif italic text-6xl md:text-7xl text-primary/20 group-hover:text-primary/60 transition-colors leading-none">
                     {exp.year}
                   </h2>
                 </div>
-                
+
                 <div className="md:w-3/4 bg-bg-card/60 border border-primary/10 p-8 rounded-xl backdrop-blur-sm group-hover:border-primary/30 transition-all">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold text-slate-100 uppercase tracking-tight">{exp.title}</h3>
                     <p className="text-primary font-mono text-sm mt-2 tracking-widest">{exp.company}</p>
                   </div>
-                  
+
                   <div className="font-mono text-slate-400 space-y-4 leading-relaxed text-sm">
                     {exp.desc.map((d, j) => (
                       <p key={j}>{d}</p>
                     ))}
-                    
+
                     <div className="flex flex-wrap gap-2 pt-4">
                       {exp.tags.map(tag => (
                         <span key={tag} className="px-2 py-1 text-[10px] bg-primary/5 text-primary border border-primary/20 rounded tracking-widest">

@@ -1,7 +1,19 @@
-import { motion } from 'motion/react';
-import { ArrowUpRight, Mail, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowUpRight, Mail, Zap, X } from 'lucide-react';
 
 export default function About(props: { key?: string }) {
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:Yuvi.123.777@gmail.com?subject=Collaboration inquiry from ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AFrom: ${formData.email}`;
+    window.location.href = mailtoLink;
+    setShowForm(false);
+    setFormData({ name: '', email: '', message: '' });
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -54,7 +66,7 @@ export default function About(props: { key?: string }) {
 
           <div className="pt-8">
             <p className="font-mono text-sm text-slate-500 mb-6 tracking-widest">_system.status: Open for collaboration</p>
-            <button className="w-full bg-primary py-8 px-8 text-bg-dark font-mono font-black text-2xl md:text-4xl uppercase tracking-tighter rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_40px_rgba(191,255,0,0.2)] flex items-center justify-between group cursor-pointer">
+            <button onClick={() => setShowForm(true)} className="w-full bg-primary py-8 px-8 text-bg-dark font-mono font-black text-2xl md:text-4xl uppercase tracking-tighter rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_40px_rgba(191,255,0,0.2)] flex items-center justify-between group cursor-pointer">
               <span>Let's Collaborate</span>
               <Zap className="text-bg-dark group-hover:translate-x-2 transition-transform" size={40} fill="currentColor" />
             </button>
@@ -76,6 +88,76 @@ export default function About(props: { key?: string }) {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {showForm && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-bg-dark/80 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="w-full max-w-lg bg-bg-card border border-primary/20 p-8 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50"></div>
+              
+              <button onClick={() => setShowForm(false)} className="absolute top-6 right-6 text-slate-400 hover:text-primary transition-colors">
+                <X size={24} />
+              </button>
+              
+              <h2 className="text-3xl font-serif italic text-slate-100 mb-8 border-b border-primary/20 pb-4">
+                Initiate <span className="text-primary">Sequence</span>
+              </h2>
+              
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                <div>
+                  <label className="block text-primary/70 font-mono text-[10px] uppercase tracking-widest mb-2">Identifier</label>
+                  <input 
+                    type="text" 
+                    required 
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    className="w-full bg-bg-dark/50 border border-primary/20 rounded-lg p-3 text-slate-100 focus:border-primary outline-none focus:ring-1 focus:ring-primary font-mono text-sm transition-all" 
+                    placeholder="Your Name" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-primary/70 font-mono text-[10px] uppercase tracking-widest mb-2">Comlink</label>
+                  <input 
+                    type="email" 
+                    required 
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full bg-bg-dark/50 border border-primary/20 rounded-lg p-3 text-slate-100 focus:border-primary outline-none focus:ring-1 focus:ring-primary font-mono text-sm transition-all" 
+                    placeholder="your@email.com" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-primary/70 font-mono text-[10px] uppercase tracking-widest mb-2">Data Payload</label>
+                  <textarea 
+                    required 
+                    rows={4} 
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    className="w-full bg-bg-dark/50 border border-primary/20 rounded-lg p-3 text-slate-100 focus:border-primary outline-none focus:ring-1 focus:ring-primary font-mono text-sm resize-none transition-all" 
+                    placeholder="Transmission contents..."
+                  ></textarea>
+                </div>
+                
+                <div className="pt-4">
+                  <button type="submit" className="w-full bg-primary/10 border border-primary text-primary py-4 rounded-lg font-mono uppercase tracking-widest hover:bg-primary hover:text-bg-dark transition-all duration-300 shadow-[0_0_20px_rgba(191,255,0,0.1)] hover:shadow-[0_0_30px_rgba(191,255,0,0.3)] font-bold">
+                    Transmit payload
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
