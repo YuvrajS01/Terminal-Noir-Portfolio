@@ -1,4 +1,4 @@
-# Dev_Terminal_v4.0
+# Dev_Terminal_v7.0
 
 A modern, terminal-inspired developer portfolio designed for a Fullstack Engineer specializing in distributed architectures & high-performance UI.
 
