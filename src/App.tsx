@@ -152,7 +152,7 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-5 py-2.5 bg-[#12140a]/80 text-primary border border-primary/20 rounded-full text-sm font-mono backdrop-blur-md shadow-[0_0_15px_rgba(191,255,0,0.15)] flex items-center gap-3 pointer-events-none"
+              className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-5 py-2.5 bg-bg-card/80 text-primary border border-primary/20 rounded-full text-sm font-mono backdrop-blur-md shadow-[0_0_15px_rgba(191,255,0,0.15)] flex items-center gap-3 pointer-events-none"
             >
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
               {scrollMsg.text}

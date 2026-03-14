@@ -10,10 +10,11 @@
   --font-serif: "Instrument Serif", serif;
 }
 
-body {
+html, body {
   background-color: var(--color-bg-dark);
   color: #f8f8f5;
   font-family: var(--font-display);
+  overscroll-behavior-y: none;
 }
 
 @layer utilities {
