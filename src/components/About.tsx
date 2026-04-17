@@ -49,7 +49,7 @@ export default function About(props: { key?: string }) {
           <div>
             <span className="text-primary font-mono text-xs uppercase tracking-[0.3em] mb-10 block">02 // Connectivity</span>
             <div className="flex flex-col gap-8">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between border-b border-primary/20 pb-6 hover:border-primary transition-colors">
+              <a href="https://drive.google.com/file/d/1DfWTvPxRCBCasIkzOY1agYNSYEczLjM8/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between border-b border-primary/20 pb-6 hover:border-primary transition-colors">
                 <span className="text-3xl md:text-4xl font-mono uppercase tracking-tighter group-hover:translate-x-2 transition-transform">Resume</span>
                 <FileText className="text-primary group-hover:rotate-12 transition-transform" size={32} />
               </a>
