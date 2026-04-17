@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowUpRight, Mail, Zap, X } from 'lucide-react';
+import { ArrowUpRight, FileText, Mail, Zap, X } from 'lucide-react';
 
 export default function About(props: { key?: string }) {
   const [showForm, setShowForm] = useState(false);
@@ -49,6 +49,10 @@ export default function About(props: { key?: string }) {
           <div>
             <span className="text-primary font-mono text-xs uppercase tracking-[0.3em] mb-10 block">02 // Connectivity</span>
             <div className="flex flex-col gap-8">
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between border-b border-primary/20 pb-6 hover:border-primary transition-colors">
+                <span className="text-3xl md:text-4xl font-mono uppercase tracking-tighter group-hover:translate-x-2 transition-transform">Resume</span>
+                <FileText className="text-primary group-hover:rotate-12 transition-transform" size={32} />
+              </a>
               <a href="https://github.com/YuvrajS01" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between border-b border-primary/20 pb-6 hover:border-primary transition-colors">
                 <span className="text-3xl md:text-4xl font-mono uppercase tracking-tighter group-hover:translate-x-2 transition-transform">GitHub</span>
                 <ArrowUpRight className="text-primary group-hover:rotate-45 transition-transform" size={32} />
